@@ -1,0 +1,25 @@
+version: "3"
+networks:
+  hyperledger-ov:
+    external:
+      name: hyperledger-ov
+services:
+  ca_blockchain.cbca.net:
+    hostname: ca.blockchain.cbca.net
+    image: hyperledger/fabric-ca:latest
+    networks:
+      hyperledger-ov:
+        aliases:
+        - ca.blockchain.cbca.net
+    environment:
+    - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+    - FABRIC_CA_SERVER_CA_NAME=ca.blockchain.cbca.net
+    - FABRIC_CA_SERVER_TLS_ENABLED=true
+    - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.blockchain.cbca.net-cert.pem
+    - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/a79763287959c57209c9fae4ea75ef040ebf353d12bf75b233cd94577746e42d_sk
+    - GODEBUG=netdns=go
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.blockchain.cbca.net-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/a79763287959c57209c9fae4ea75ef040ebf353d12bf75b233cd94577746e42d_sk -b admin:Wie4Moti --db.type mysql  --db.datasource root:passwd@tcp\(rm-2ze3cwu3704z0n48p.mysql.rds.aliyuncs.com:3306\)/fabric_ca_one?parseTime=true'
+    volumes:
+    - ./crypto-config/peerOrganizations/blockchain.cbca.net/ca/:/etc/hyperledger/fabric-ca-server-config
+    ports:
+    - 7054:7054

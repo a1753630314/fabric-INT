@@ -1,0 +1,29 @@
+Organizations:
+- &blockchainitruscomcn
+    Name: blockchainitruscomcnMSP 
+    ID: blockchainitruscomcnMSP
+
+    MSPDir: crypto-config/peerOrganizations/blockchain.itrus.com.cn/msp
+
+    AnchorPeers:
+       - Host: peer0.blockchain.itrus.com.cn
+         Port: 7051
+- &blockchainntscaccn
+    Name: blockchainntscaccnMSP          
+    ID: blockchainntscaccnMSP
+
+    MSPDir: crypto-config/peerOrganizations/blockchain.ntsc.ac.cn/msp
+
+    AnchorPeers:
+       - Host: peer0.blockchain.ntsc.ac.cn
+         Port: 7051
+- &blockchainbxsfjdzxgovcn
+    Name: blockchainbxsfjdzxgovcnMSP          
+    ID: blockchainbxsfjdzxgovcnMSP
+
+    MSPDir: crypto-config/peerOrganizations/blockchain.bxsfjdzx.gov.cn/msp
+
+    AnchorPeers:
+       - Host: peer0.blockchain.bxsfjdzx.gov.cn
+         Port: 7051
+

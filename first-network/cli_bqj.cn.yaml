@@ -1,0 +1,42 @@
+version: "3"
+networks:
+  hyperledger-ov:
+    external:
+      name: hyperledger-ov
+services:
+  cli:
+    image: hyperledger/fabric-tools:latest
+    networks:
+      hyperledger-ov:
+        aliases:
+        - cli
+    environment:
+    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=hyperledger-ov
+    - GOPATH=/opt/gopath
+    - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+    - CORE_LOGGING_LEVEL=DEBUG
+    - CORE_PEER_ID=cli
+    - CORE_PEER_ADDRESS=peer0.blockchain.bqj.cn:7051
+    - CORE_PEER_LOCALMSPID=blockchainbqjcnMSP
+    - CORE_PEER_TLS_ENABLED=true
+    - CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/blockchain.bqj.cn/peers/peer0.blockchain.bqj.cn/tls/server.crt
+    - CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/blockchain.bqj.cn/peers/peer0.blockchain.bqj.cn/tls/server.key
+    - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/blockchain.bqj.cn/peers/peer0.blockchain.bqj.cn/tls/ca.crt
+    - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/blockchain.bqj.cn/users/Admin@blockchain.bqj.cn/msp
+    - GODEBUG=netdns=go
+    - COLUMNS=400
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: sleep 36000000000000
+    volumes:
+    - ./hosts:/etc/hosts
+    - /var/run/:/host/var/run/
+    - ./../:/opt/gopath/src/
+    - ./../chaincode/:/opt/gopath/src/github.com/hyperledger/fabric/cbca/chaincode/go
+    - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+    - ./scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
+    - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
+    ports:
+    - 8080:8080
+    - 8081:8081
+    - 8082:8082
+    - 8083:8083

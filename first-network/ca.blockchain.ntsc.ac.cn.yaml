@@ -1,0 +1,26 @@
+version: "3"
+networks:
+  hyperledger-ov:
+    external:
+      name: hyperledger-ov
+services:
+  ca_blockchain.ntsc.ac.cn:
+    hostname: ca.blockchain.ntsc.ac.cn
+    image: hyperledger/fabric-ca:latest
+    networks:
+      hyperledger-ov:
+        aliases:
+        - ca.blockchain.ntsc.ac.cn
+    environment:
+    - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+    - FABRIC_CA_SERVER_CA_NAME=ca.blockchain.ntsc.ac.cn
+    - FABRIC_CA_SERVER_TLS_ENABLED=true
+    - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.blockchain.ntsc.ac.cn-cert.pem
+    - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/66e546e6efde9c73d12d99971e3ac4de8873afea8929f372a625fa9df9ed4ed1_sk
+    - GODEBUG=netdns=go
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.blockchain.ntsc.ac.cn-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/66e546e6efde9c73d12d99971e3ac4de8873afea8929f372a625fa9df9ed4ed1_sk -b admin:Wie4Moti'
+    volumes:
+    - /etc/hosts:/etc/hosts
+    - ./crypto-config/peerOrganizations/blockchain.ntsc.ac.cn/ca/:/etc/hyperledger/fabric-ca-server-config
+    ports:
+    - 7054:7054

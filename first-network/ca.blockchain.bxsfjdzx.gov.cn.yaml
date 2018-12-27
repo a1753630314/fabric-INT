@@ -1,0 +1,26 @@
+version: "3"
+networks:
+  hyperledger-ov:
+    external:
+      name: hyperledger-ov
+services:
+  ca_blockchain.bxsfjdzx.gov.cn:
+    hostname: ca.blockchain.bxsfjdzx.gov.cn
+    image: hyperledger/fabric-ca:latest
+    networks:
+      hyperledger-ov:
+        aliases:
+        - ca.blockchain.bxsfjdzx.gov.cn
+    environment:
+    - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+    - FABRIC_CA_SERVER_CA_NAME=ca.blockchain.bxsfjdzx.gov.cn
+    - FABRIC_CA_SERVER_TLS_ENABLED=true
+    - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.blockchain.bxsfjdzx.gov.cn-cert.pem
+    - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/29ad2a4ac798a98cb24fef8e726defb84a4b2a16cf5b103436dfc1638dd4fb2b_sk
+    - GODEBUG=netdns=go
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.blockchain.bxsfjdzx.gov.cn-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/29ad2a4ac798a98cb24fef8e726defb84a4b2a16cf5b103436dfc1638dd4fb2b_sk -b admin:Wie4Moti'
+    volumes:
+    - /etc/hosts:/etc/hosts
+    - ./crypto-config/peerOrganizations/blockchain.bxsfjdzx.gov.cn/ca/:/etc/hyperledger/fabric-ca-server-config
+    ports:
+    - 7054:7054

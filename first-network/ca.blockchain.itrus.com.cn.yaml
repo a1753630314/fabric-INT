@@ -1,0 +1,26 @@
+version: "3"
+networks:
+  hyperledger-ov:
+    external:
+      name: hyperledger-ov
+services:
+  ca_blockchain.itrus.com.cn:
+    hostname: ca.blockchain.itrus.com.cn
+    image: hyperledger/fabric-ca:latest
+    networks:
+      hyperledger-ov:
+        aliases:
+        - ca.blockchain.itrus.com.cn
+    environment:
+    - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+    - FABRIC_CA_SERVER_CA_NAME=ca.blockchain.itrus.com.cn
+    - FABRIC_CA_SERVER_TLS_ENABLED=true
+    - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.blockchain.itrus.com.cn-cert.pem
+    - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/84147a851d6f2fc336a129b76a950853c5980369744c12d14dd555790025cb30_sk
+    - GODEBUG=netdns=go
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.blockchain.itrus.com.cn-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/84147a851d6f2fc336a129b76a950853c5980369744c12d14dd555790025cb30_sk -b admin:Wie4Moti'
+    volumes:
+    - /etc/hosts:/etc/hosts
+    - ./crypto-config/peerOrganizations/blockchain.itrus.com.cn/ca/:/etc/hyperledger/fabric-ca-server-config
+    ports:
+    - 7054:7054

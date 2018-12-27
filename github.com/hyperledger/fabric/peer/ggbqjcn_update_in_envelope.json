@@ -1,0 +1,84 @@
+{
+  "payload": {
+    "header": {
+      "channel_header": {
+        "channel_id": "cbca",
+        "type": 2
+      }
+    },
+    "data": {
+      "config_update": {
+        "channel_id": "cbca",
+        "read_set": {
+          "groups": {
+            "Application": {
+              "groups": {
+                "blockchainnewcomMSP": {
+                  "mod_policy": "",
+                  "version": "0"
+                }
+              },
+              "mod_policy": "",
+              "version": "2"
+            }
+          },
+          "mod_policy": "",
+          "version": "0"
+        },
+        "type": 0,
+        "write_set": {
+          "groups": {
+            "Application": {
+              "groups": {
+                "blockchainnewcomMSP": {
+                  "mod_policy": "",
+                  "values": {
+                    "MSP": {
+                      "mod_policy": "Admins",
+                      "value": {
+                        "config": {
+                          "FabricNodeOUs": {
+                            "Enable": true,
+                            "clientOUIdentifier": {
+                              "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNTekNDQWZLZ0F3SUJBZ0lSQU85RGhjTkFxSmJZWUY4TG9FNndxVWt3Q2dZSUtvWkl6ajBFQXdJd2R6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHekFaQmdOVkJBb1RFbUpzYjJOclkyaGhhVzR1Ym1WM0xtTnZiVEVlTUJ3R0ExVUVBeE1WClkyRXVZbXh2WTJ0amFHRnBiaTV1WlhjdVkyOXRNQjRYRFRFNE1EVXhPREE1TXpBeE5sb1hEVEk0TURVeE5UQTUKTXpBeE5sb3dkekVMTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVgpCQWNURFZOaGJpQkdjbUZ1WTJselkyOHhHekFaQmdOVkJBb1RFbUpzYjJOclkyaGhhVzR1Ym1WM0xtTnZiVEVlCk1Cd0dBMVVFQXhNVlkyRXVZbXh2WTJ0amFHRnBiaTV1WlhjdVkyOXRNRmt3RXdZSEtvWkl6ajBDQVFZSUtvWkkKemowREFRY0RRZ0FFOUpxVXJDMVpCNEFBMjZWcVNjRU9LQ1haanpIMURDUzVOeCtncER4TDFoeTEyU1NzZlZxSQpuRFNEQytvc0xnS09LK1FtaVI2eUl5a0MyVzZFSlBPeEQ2TmZNRjB3RGdZRFZSMFBBUUgvQkFRREFnR21NQThHCkExVWRKUVFJTUFZR0JGVWRKUUF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFwQmdOVkhRNEVJZ1FnOGxVd2E5aUEKY1FNeTVkR3lBcEZFblp1eit2K3kyYmF6SGZncU9GL1pXUFF3Q2dZSUtvWkl6ajBFQXdJRFJ3QXdSQUlnTEpuWQpGM3ZCbTVvbWxCVlp0UVNtTDhHbTlIaXZPcVFyeGM2Q0Q4cHdpZ0lDSUQrS2tpakVPSzk2ZkcrYzdESS8yaTJYClpPRXh3b0JsVlFXeVU4T0t3S0pOCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                              "organizational_unit_identifier": "client"
+                            },
+                            "peerOUIdentifier": {
+                              "certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNTekNDQWZLZ0F3SUJBZ0lSQU85RGhjTkFxSmJZWUY4TG9FNndxVWt3Q2dZSUtvWkl6ajBFQXdJd2R6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHekFaQmdOVkJBb1RFbUpzYjJOclkyaGhhVzR1Ym1WM0xtTnZiVEVlTUJ3R0ExVUVBeE1WClkyRXVZbXh2WTJ0amFHRnBiaTV1WlhjdVkyOXRNQjRYRFRFNE1EVXhPREE1TXpBeE5sb1hEVEk0TURVeE5UQTUKTXpBeE5sb3dkekVMTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVgpCQWNURFZOaGJpQkdjbUZ1WTJselkyOHhHekFaQmdOVkJBb1RFbUpzYjJOclkyaGhhVzR1Ym1WM0xtTnZiVEVlCk1Cd0dBMVVFQXhNVlkyRXVZbXh2WTJ0amFHRnBiaTV1WlhjdVkyOXRNRmt3RXdZSEtvWkl6ajBDQVFZSUtvWkkKemowREFRY0RRZ0FFOUpxVXJDMVpCNEFBMjZWcVNjRU9LQ1haanpIMURDUzVOeCtncER4TDFoeTEyU1NzZlZxSQpuRFNEQytvc0xnS09LK1FtaVI2eUl5a0MyVzZFSlBPeEQ2TmZNRjB3RGdZRFZSMFBBUUgvQkFRREFnR21NQThHCkExVWRKUVFJTUFZR0JGVWRKUUF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFwQmdOVkhRNEVJZ1FnOGxVd2E5aUEKY1FNeTVkR3lBcEZFblp1eit2K3kyYmF6SGZncU9GL1pXUFF3Q2dZSUtvWkl6ajBFQXdJRFJ3QXdSQUlnTEpuWQpGM3ZCbTVvbWxCVlp0UVNtTDhHbTlIaXZPcVFyeGM2Q0Q4cHdpZ0lDSUQrS2tpakVPSzk2ZkcrYzdESS8yaTJYClpPRXh3b0JsVlFXeVU4T0t3S0pOCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                              "organizational_unit_identifier": "peer"
+                            }
+                          },
+                          "admins": [
+                            "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNNVENDQWRlZ0F3SUJBZ0lSQUxqSkwwYmErdUo4N01PdlIzWlJReEF3Q2dZSUtvWkl6ajBFQXdJd2R6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHekFaQmdOVkJBb1RFbUpzYjJOclkyaGhhVzR1Ym1WM0xtTnZiVEVlTUJ3R0ExVUVBeE1WClkyRXVZbXh2WTJ0amFHRnBiaTV1WlhjdVkyOXRNQjRYRFRFNE1EVXhPREE1TXpBeE5sb1hEVEk0TURVeE5UQTUKTXpBeE5sb3diakVMTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVgpCQWNURFZOaGJpQkdjbUZ1WTJselkyOHhEekFOQmdOVkJBc1RCbU5zYVdWdWRERWhNQjhHQTFVRUF3d1lRV1J0CmFXNUFZbXh2WTJ0amFHRnBiaTV1WlhjdVkyOXRNRmt3RXdZSEtvWkl6ajBDQVFZSUtvWkl6ajBEQVFjRFFnQUUKTFc0QlJWZDc1K2J3YXNnTXF6QmtPU2h6ODJ1MTVtQzlrWGMwT2diTnZWUHFGeXN3VWxwZS82a3Q1ekc3bmxzbgp4MmJEMStVTXllOVhFWktDOXZuWVBLTk5NRXN3RGdZRFZSMFBBUUgvQkFRREFnZUFNQXdHQTFVZEV3RUIvd1FDCk1BQXdLd1lEVlIwakJDUXdJb0FnOGxVd2E5aUFjUU15NWRHeUFwRkVuWnV6K3YreTJiYXpIZmdxT0YvWldQUXcKQ2dZSUtvWkl6ajBFQXdJRFNBQXdSUUloQU4zUTZmS2o5VE9mNi9zRFcyRitXUTVxMWozUG52M0lrYTlxY3RDMQo2SlFHQWlBdzhqKzBJdTdtejdjUkRKenhHa0JoV2VoQXhzaHhZYytpMWF1NlR1dXV6QT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                          ],
+                          "crypto_config": {
+                            "identity_identifier_hash_function": "SHA256",
+                            "signature_hash_family": "SHA2"
+                          },
+                          "name": "blockchainnewcomcnMSP",
+                          "root_certs": [
+                            "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNTekNDQWZLZ0F3SUJBZ0lSQU85RGhjTkFxSmJZWUY4TG9FNndxVWt3Q2dZSUtvWkl6ajBFQXdJd2R6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHekFaQmdOVkJBb1RFbUpzYjJOclkyaGhhVzR1Ym1WM0xtTnZiVEVlTUJ3R0ExVUVBeE1WClkyRXVZbXh2WTJ0amFHRnBiaTV1WlhjdVkyOXRNQjRYRFRFNE1EVXhPREE1TXpBeE5sb1hEVEk0TURVeE5UQTUKTXpBeE5sb3dkekVMTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVgpCQWNURFZOaGJpQkdjbUZ1WTJselkyOHhHekFaQmdOVkJBb1RFbUpzYjJOclkyaGhhVzR1Ym1WM0xtTnZiVEVlCk1Cd0dBMVVFQXhNVlkyRXVZbXh2WTJ0amFHRnBiaTV1WlhjdVkyOXRNRmt3RXdZSEtvWkl6ajBDQVFZSUtvWkkKemowREFRY0RRZ0FFOUpxVXJDMVpCNEFBMjZWcVNjRU9LQ1haanpIMURDUzVOeCtncER4TDFoeTEyU1NzZlZxSQpuRFNEQytvc0xnS09LK1FtaVI2eUl5a0MyVzZFSlBPeEQ2TmZNRjB3RGdZRFZSMFBBUUgvQkFRREFnR21NQThHCkExVWRKUVFJTUFZR0JGVWRKUUF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFwQmdOVkhRNEVJZ1FnOGxVd2E5aUEKY1FNeTVkR3lBcEZFblp1eit2K3kyYmF6SGZncU9GL1pXUFF3Q2dZSUtvWkl6ajBFQXdJRFJ3QXdSQUlnTEpuWQpGM3ZCbTVvbWxCVlp0UVNtTDhHbTlIaXZPcVFyeGM2Q0Q4cHdpZ0lDSUQrS2tpakVPSzk2ZkcrYzdESS8yaTJYClpPRXh3b0JsVlFXeVU4T0t3S0pOCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                          ],
+                          "tls_root_certs": [
+                            "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNVakNDQWZpZ0F3SUJBZ0lSQU5rSUxaOGJ1alpxRzlhaXlMNU1QbkV3Q2dZSUtvWkl6ajBFQXdJd2VqRUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHekFaQmdOVkJBb1RFbUpzYjJOclkyaGhhVzR1Ym1WM0xtTnZiVEVoTUI4R0ExVUVBeE1ZCmRHeHpZMkV1WW14dlkydGphR0ZwYmk1dVpYY3VZMjl0TUI0WERURTRNRFV4T0RBNU16QXhObG9YRFRJNE1EVXgKTlRBNU16QXhObG93ZWpFTE1Ba0dBMVVFQmhNQ1ZWTXhFekFSQmdOVkJBZ1RDa05oYkdsbWIzSnVhV0V4RmpBVQpCZ05WQkFjVERWTmhiaUJHY21GdVkybHpZMjh4R3pBWkJnTlZCQW9URW1Kc2IyTnJZMmhoYVc0dWJtVjNMbU52CmJURWhNQjhHQTFVRUF4TVlkR3h6WTJFdVlteHZZMnRqYUdGcGJpNXVaWGN1WTI5dE1Ga3dFd1lIS29aSXpqMEMKQVFZSUtvWkl6ajBEQVFjRFFnQUVSRmF6c2hObWgyck9OdE5mQzBrRVNiNG80cjI5SkhtSUQ2ZWpXR2ttNFliSwpwbnlpUzNWcW1KT3dDYVpPWHFZZXd2WVArRDFxUVJseDExNXVTMk9wcXFOZk1GMHdEZ1lEVlIwUEFRSC9CQVFECkFnR21NQThHQTFVZEpRUUlNQVlHQkZVZEpRQXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QXBCZ05WSFE0RUlnUWcKRHN0NGFadjQ5dGxoeFlDTHJ2VXpuSE1KZFZKcU4rVVptK0kyVGwxb2tBY3dDZ1lJS29aSXpqMEVBd0lEU0FBdwpSUUloQVBZZXlmTXZVZlVDMmwzbk5FbUlnWFA3dWg0TWRtRURvd2l4MmJlOXJwZW9BaUJ4cWJsenVrQjhMcGhmCjgrUjhvRmRJcEoyckh4K1NqZHhZd0FUTldvb3ppUT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                          ]
+                        },
+                        "type": 0
+                      },
+                      "version": "1"
+                    }
+                  },
+                  "version": "0"
+                }
+              },
+              "mod_policy": "",
+              "version": "2"
+            }
+          },
+          "mod_policy": "",
+          "version": "0"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+NodeOUs:
+  Enable: true
+  ClientOUIdentifier:
+    Certificate: cacerts/ca.blockchain.bxsfjdzx.gov.cn-cert.pem
+    OrganizationalUnitIdentifier: client
+  PeerOUIdentifier:
+    Certificate: cacerts/ca.blockchain.bxsfjdzx.gov.cn-cert.pem
+    OrganizationalUnitIdentifier: peer

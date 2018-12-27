@@ -1,0 +1,25 @@
+PeerOrgs:
+        # ---------------------------------------------------------------------------
+        # Org3
+        # ---------------------------------------------------------------------------
+      - Name: blockchain 
+        Domain: blockchain.itrus.com.cn
+        EnableNodeOUs: true
+        Template:
+            Count: 2
+        Users:
+            Count: 2
+      - Name: blockchain 
+        Domain: blockchain.ntsc.ac.cn
+        EnableNodeOUs: true
+        Template:
+            Count: 2
+        Users:
+            Count: 2
+      - Name: blockchain
+        Domain: blockchain.bxsfjdzx.gov.cn
+        EnableNodeOUs: true
+        Template:
+            Count: 2
+        Users:
+            Count: 2

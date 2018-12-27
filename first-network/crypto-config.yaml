@@ -1,0 +1,23 @@
+OrdererOrgs:
+- Name: Orderer
+  Domain: bqj.cn
+  Specs:
+  - Hostname: orderer0
+  - Hostname: orderer1
+  - Hostname: orderer2
+  Users:
+    Count: 2
+PeerOrgs:
+- Name: blockchain
+  Domain: blockchain.bqj.cn
+  Template:
+    Count: 2
+  Users:
+    Count: 1
+- Name: blockchain
+  Domain: blockchain.cbca.net
+  Template:
+    Count: 2
+  Users:
+    Count: 1
+

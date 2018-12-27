@@ -1,0 +1,8 @@
+NodeOUs:
+  Enable: true
+  ClientOUIdentifier:
+    Certificate: cacerts/ca.blockchain.ntsc.ac.cn-cert.pem
+    OrganizationalUnitIdentifier: client
+  PeerOUIdentifier:
+    Certificate: cacerts/ca.blockchain.ntsc.ac.cn-cert.pem
+    OrganizationalUnitIdentifier: peer

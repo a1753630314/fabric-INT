@@ -1,0 +1,106 @@
+Profiles:
+  TwoOrgsChannel:
+    Consortium: cbca
+    Application:
+      Organizations:
+      - Name: blockchainbqjcnMSP
+        ID: blockchainbqjcnMSP
+        MSPDir: crypto-config/peerOrganizations/blockchain.bqj.cn/msp
+        AnchorPeers:
+        - Host: peer0.blockchain.bqj.cn
+          Port: 7051
+      - Name: blockchaincbcanetMSP
+        ID: blockchaincbcanetMSP
+        MSPDir: crypto-config/peerOrganizations/blockchain.cbca.net/msp
+        AnchorPeers:
+        - Host: peer0.blockchain.cbca.net
+          Port: 7051
+      Capabilities:
+        V1_1: true
+  TwoOrgsOrdererGenesis:
+    Orderer:
+      OrdererType: kafka
+      Addresses:
+      - orderer0.bqj.cn:7050
+      - orderer1.bqj.cn:7050
+      - orderer2.bqj.cn:7050
+      BatchTimeout: 1s
+      BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 103809024
+        PreferredMaxBytes: 524288
+      Kafka:
+        Brokers:
+        - kafka0.bqj.cn:9092
+        - kafka1.bqj.cn:9092
+        - kafka2.bqj.cn:9092
+        - kafka3.bqj.cn:9092
+      Organizations:
+      - Name: OrdererOrg
+        ID: OrdererMSP
+        MSPDir: crypto-config/ordererOrganizations/bqj.cn/msp
+      Capabilities:
+        V1_1: true
+    Consortiums:
+      cbca:
+        Organizations:
+        - Name: blockchainbqjcnMSP
+          ID: blockchainbqjcnMSP
+          MSPDir: crypto-config/peerOrganizations/blockchain.bqj.cn/msp
+          AnchorPeers:
+          - Host: peer0.blockchain.bqj.cn
+            Port: 7051
+        - Name: blockchaincbcanetMSP
+          ID: blockchaincbcanetMSP
+          MSPDir: crypto-config/peerOrganizations/blockchain.cbca.net/msp
+          AnchorPeers:
+          - Host: peer0.blockchain.cbca.net
+            Port: 7051
+    Capabilities:
+      V1_1: true
+Organizations:
+- Name: OrdererOrg
+  ID: OrdererMSP
+  MSPDir: crypto-config/ordererOrganizations/bqj.cn/msp
+- Name: blockchainbqjcnMSP
+  ID: blockchainbqjcnMSP
+  MSPDir: crypto-config/peerOrganizations/blockchain.bqj.cn/msp
+  AnchorPeers:
+  - Host: peer0.blockchain.bqj.cn
+    Port: 7051
+- Name: blockchaincbcanetMSP
+  ID: blockchaincbcanetMSP
+  MSPDir: crypto-config/peerOrganizations/blockchain.cbca.net/msp
+  AnchorPeers:
+  - Host: peer0.blockchain.cbca.net
+    Port: 7051
+Orderer:
+  OrdererType: kafka
+  Addresses:
+  - orderer0.bqj.cn:7050
+  - orderer1.bqj.cn:7050
+  - orderer2.bqj.cn:7050
+  BatchTimeout: 1s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 103809024
+    PreferredMaxBytes: 524288
+  Kafka:
+    Brokers:
+    - kafka0.bqj.cn:9092
+    - kafka1.bqj.cn:9092
+    - kafka2.bqj.cn:9092
+    - kafka3.bqj.cn:9092
+  Organizations:
+  - Name: OrdererOrg
+    ID: OrdererMSP
+    MSPDir: crypto-config/ordererOrganizations/bqj.cn/msp
+  Capabilities:
+    V1_1: true
+Capabilities:
+  Application:
+    V1_1: true
+  Global:
+    V1_1: true
+  Orderer:
+    V1_1: true

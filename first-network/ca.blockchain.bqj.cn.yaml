@@ -1,0 +1,26 @@
+version: "3"
+networks:
+  hyperledger-ov:
+    external:
+      name: hyperledger-ov
+services:
+  ca_blockchain.bqj.cn:
+    hostname: ca.blockchain.bqj.cn
+    image: hyperledger/fabric-ca:latest
+    networks:
+      hyperledger-ov:
+        aliases:
+        - ca.blockchain.bqj.cn
+    environment:
+    - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+    - FABRIC_CA_SERVER_CA_NAME=ca.blockchain.bqj.cn
+    - FABRIC_CA_SERVER_TLS_ENABLED=true
+    - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.blockchain.bqj.cn-cert.pem
+    - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/c8c4df8cf8c206bc9c62b33ad86958cc0e3fc62540e9151b9c2408bed575809b_sk
+    - GODEBUG=netdns=go
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.blockchain.bqj.cn-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/c8c4df8cf8c206bc9c62b33ad86958cc0e3fc62540e9151b9c2408bed575809b_sk -b admin:adminpwd'
+    volumes:
+    - ./hosts:/etc/hosts
+    - ./crypto-config/peerOrganizations/blockchain.bqj.cn/ca/:/etc/hyperledger/fabric-ca-server-config
+    ports:
+    - 7054:7054
